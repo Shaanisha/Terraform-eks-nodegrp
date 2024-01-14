@@ -30,7 +30,7 @@ output "kubeconfig-certificate-authority-data" {
 }
 
 resource "aws_eks_node_group" "node-grp" {
-  cluster_name    = aws_eks_cluster.ankit-cluster.name
+  cluster_name    = aws_eks_cluster.shraddha-cluster.name
   node_group_name = "pc-node-group"
   node_role_arn   = aws_iam_role.worker.arn
   subnet_ids      = data.aws_subnets.available-subnets.ids
