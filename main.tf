@@ -5,8 +5,8 @@ data "aws_subnets" "available-subnets"{
     }
 }
 
-resource "aws_eks_cluster" "ankit-cluster" {
-  name     = "ankit-cluster"
+resource "aws_eks_cluster" "shraddha-cluster" {
+  name     = "shraddha-cluster"
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
@@ -22,11 +22,11 @@ resource "aws_eks_cluster" "ankit-cluster" {
 }
 
 output "endpoint" {
-  value = aws_eks_cluster.ankit-cluster.endpoint
+  value = aws_eks_cluster.shraddha-cluster.endpoint
 }
 
 output "kubeconfig-certificate-authority-data" {
-  value = aws_eks_cluster.ankit-cluster.certificate_authority[0].data
+  value = aws_eks_cluster.shraddha-cluster.certificate_authority[0].data
 }
 
 resource "aws_eks_node_group" "node-grp" {
